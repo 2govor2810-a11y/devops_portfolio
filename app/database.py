@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, 
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
-engine = create_engine('sqlite:///DataBase.db')
+engine = create_engine('sqlite:////home/user/PycharmProjects/portf/data/DataBase.db')
 metadata = MetaData()
 sesion = Session()
 

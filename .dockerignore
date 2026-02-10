@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Тесты и документация
+tests/
+test/
+docs/
+.coverage
+htmlcov/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Окружение
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Логи
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
