@@ -1,8 +1,10 @@
 from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, insert, select, update, delete
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
+import os
 
-engine = create_engine('sqlite:////home/user/PycharmProjects/portf/data/DataBase.db')
+os.makedirs("data",exist_ok = True)
+engine = create_engine('sqlite:///./data/DataBase.db')
 metadata = MetaData()
 sesion = Session()
 

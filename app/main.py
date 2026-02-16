@@ -1,30 +1,31 @@
-from fastapi import FastAPI, Body
-import os
-from typing import Optional
-import os
-from app import database
-from app.database import SMeal, Meal
+from fastapi import FastAPI, responses
+from . import database
 
 app = FastAPI()
 
+#корневая страница
+
+@app.get("/",response_class=responses.HTMLResponse)
+def main_page():
+    return "<h1>ПРИВЕТ</h1>"
 #GET - вывод меню
 @app.get("/check_menu")
 def get_all_students():
     return {"message":database.check_menu()}
 #POST - добавление блюда
 @app.post("/add_meal")
-def add_new_meal(meal : Meal):
+def add_new_meal(meal : database.Meal):
     database.add_meal(meal)
     return {"message": "Meal was created",
             "meal": meal}
 #PUT - обновлениe
 @app.put("/update_meal")
-def update_meal_by_id(filter:SMeal,upd_data:Meal):
+def update_meal_by_id(filter:database.SMeal,upd_data:database.Meal):
     database.update_meal(filter,upd_data)
     return {"message": f"Meal {filter} was updated"}
 
 @app.delete("/delete_meal")
-def delete_meal(filter : SMeal):
+def delete_meal(filter : database.SMeal):
     database.delete_meal_by_id(filter)
     return {"message": "Meal was deleted",
             "filter": filter}

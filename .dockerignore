@@ -1,23 +1,12 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
+# Virtual Environment
 venv/
-.venv/
-
-# Тесты и документация
-tests/
-test/
-docs/
-.coverage
-htmlcov/
-
-# Git
-.git/
-.gitignore
+env/
+ENV/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
 
 # IDE
 .vscode/
@@ -25,17 +14,28 @@ htmlcov/
 *.swp
 *.swo
 
-# Окружение
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Git
+.git/
+.gitignore
+.gitattributes
 
-# Логи
-*.log
+# Database
+*.db
+*.sqlite
+*.sqlite3
+app/data/*.db
+
+# Logs
 logs/
+*.log
 
-# OS
-.DS_Store
-Thumbs.db
+# Docker
+docker-compose*.yml
+docker-compose*.yaml
+
+# Tests
+tests/
+*.test.py
+.pytest_cache/
+.coverage
+htmlcov/
